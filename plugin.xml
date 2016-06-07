@@ -22,6 +22,8 @@
 
     <!-- android -->
     <platform name="android">
+        <hook type="after_plugin_install" src="hooks/android/after_plugin_install.js" />
+
         <config-file target="res/xml/config.xml" parent="/*">
 			<feature name="FBAnalytics">
 				<param name="android-package" value="com.rener.firebase.Analytics" />
@@ -34,8 +36,11 @@
 			</feature>
         </config-file>
 
-		<framework src="src/android/build-extras.gradle" custom="true" type="gradleReference" />
-		<source-file src="google-services.json" target-dir="./" />
+        <source-file src="src/android/google-services.json" target-dir="./" />
+
+        <framework src="com.google.firebase:firebase-analytics:9.0.0" />
+        <framework src="com.google.firebase:firebase-config:9.0.0" />
+        <framework src="com.google.firebase:firebase-messaging:9.0.0" />
 
 		<!-- Analytics -->
 		<source-file src="src/android/Analytics.java" target-dir="src/com/rener/firebase" />
@@ -70,6 +75,8 @@
     
     <!-- ios -->
     <platform name="ios">
+        <hook type="after_plugin_install" src="hooks/ios/after_plugin_install.js" />
+
         <config-file target="config.xml" parent="/*">
             <feature name="FBAnalytics">
                 <param name="ios-package" value="CDVFBAnalytics" />
@@ -89,7 +96,7 @@
         <framework src="src/ios/GoogleSymbolUtilities.framework" custom="true" />
         <framework src="src/ios/GoogleUtilities.framework" custom="true" />
         
-        <source-file src="GoogleService-Info.plist" target-dir="./" />
+        <resource-file src="src/ios/GoogleService-Info.plist" target-dir="./" />
         
         <!--Analytics-->
         <framework src="src/ios/FirebaseAnalytics.framework" custom="true" />
