@@ -31,7 +31,7 @@ module.exports = function(context) {
 	// Modify the build.gradle to add support for the gms plugin
 	fs.appendFileSync(path.join(context.opts.projectRoot, 'platforms', 'android', 'build.gradle'), DATA);
 	// Modify the app's build.gradle
-	fs.appendFileSync(path.join(context.opts.plugin.dir, 'platforms', 'android', 'build.gradle'), DATA_APP);
+	fs.appendFileSync(path.join(context.opts.plugin.dir, 'build.gradle'), DATA_APP);
 
 	// Get the google-services.json from the uncompressed zip file and move it to the andorid project folder
 	var src = path.join(context.opts.projectRoot, 'www', 'google-services.json');
