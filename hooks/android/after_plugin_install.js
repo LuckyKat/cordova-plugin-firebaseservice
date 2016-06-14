@@ -6,7 +6,7 @@ var path = require('path');
 // Check of gradle file that we are going to append to the main build.gradle
 var DATA = `
 // Added by plugin cordova-plugin-firebaseservice
-apply plugin: 'com.google.gms.google-services'
+// apply plugin: 'com.google.gms.google-services'
 buildscript {
     repositories {
         jcenter()
