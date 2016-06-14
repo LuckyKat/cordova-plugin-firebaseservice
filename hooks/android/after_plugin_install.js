@@ -6,16 +6,22 @@ var path = require('path');
 // Check of gradle file that we are going to append to the main build.gradle
 var DATA = `
 // Added by plugin cordova-plugin-firebaseservice
-apply plugin: 'com.google.gms.google-services'
 buildscript {
     repositories {
         jcenter()
     }
 
     dependencies {
-        classpath 'com.google.gms:google-services:9.0.0'
+        classpath 'com.google.gms:google-services:3.0.0'
     }
 }
+dependencies {
+    compile 'com.google.android.gms:play-services-ads:9.0.0'
+    compile 'com.google.android.gms:play-services-analytics:9.0.0'
+    compile 'com.google.firebase:firebase-core:9.0.0'
+    compile 'com.google.firebase:firebase-crash:9.0.0'
+}
+apply plugin: 'com.google.gms.google-services'
 `;
 
 module.exports = function(context) {
