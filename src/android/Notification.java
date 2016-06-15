@@ -38,7 +38,7 @@ public class Notification extends CordovaPlugin {
   @Override
   public boolean execute(String action, final JSONArray args, CallbackContext callbackContext) throws JSONException {
 
-    if ("register".equals(action)) {
+    if ("init".equals(action)) {
       jsCallback = args.getJSONObject(0).getString("jsCallback");
       if (jsCallback == null || jsCallback.equalsIgnoreCase("")) {
         callbackContext.error("Please provide a jsCallback to fully support notifications");
