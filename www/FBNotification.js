@@ -27,10 +27,10 @@ var argscheck = require('cordova/argscheck'),
  */
 var fbnotification = {
 
-  register: function(successCallback, errorCallback, options) {
-    argscheck.checkArgs('fFO', 'FBNotification.register', arguments);
+  init: function(successCallback, errorCallback, options) {
+    argscheck.checkArgs('fFO', 'FBNotification.init', arguments);
     options = options || {};
-    exec(successCallback, errorCallback, "FBNotification", "register", [options]);
+    exec(successCallback, errorCallback, "FBNotification", "init", [options]);
   }
 };
 
